@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Header />
+        <Header/>
         <div style={{ backgroundColor: 'rgb(246, 246, 246)' }}>
           <Routes>
             {route.map((route, index) => {

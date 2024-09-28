@@ -2,10 +2,14 @@ import React from "react";
 import { BannerContent, BannerSection1, ButtonHeader, Container } from "./style";
 import HotProduct from "../../components/HotProduct/HotProduct";
 import About from "../../components/About/About";
-
+import NewProduct from "../../components/NewProduct/NewProduct";
+import IndoorSpeaker from "../../components/IndoorSpeaker/IndoorSpeaker";
+import Earphone from "../../components/Earphone/Earphone";
+import Accessory from "../../components/Accessory/Accessory";
+import News from "../../components/News/News";
 function HomePage() {
     return (
-      <div>
+      <div style={{ backgroundColor: '#f2f2f2' }}>
         <Container>
             <BannerSection1>
                 <BannerContent>
@@ -16,12 +20,13 @@ function HomePage() {
                 </BannerContent>
             </BannerSection1>
         </Container>
-        <Container>
           <HotProduct />
-        </Container>
-        <Container>
           <About/>
-        </Container>
+          <NewProduct/>
+          <IndoorSpeaker/>
+          <Earphone/>
+          <Accessory/>
+          <News/>
       </div>
     );
   }

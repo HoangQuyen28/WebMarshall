@@ -6,7 +6,8 @@ export const Section = styled.section`
     background-color:white;
     border-radius:20px;
     display:flex;
-    margin-top:100px;
+    margin-left: 20px;
+    margin-right: 20px;
 
 `
 export const Content =styled.div`

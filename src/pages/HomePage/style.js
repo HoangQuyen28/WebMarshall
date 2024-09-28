@@ -1,16 +1,14 @@
 import styled from "styled-components";
 export const Container = styled.div`
-    max-width: 97%  ;  
-    margin: 0 auto; 
     padding: 0 20px; 
     user-select:none;
 `;
 
-export const BannerSection1 = styled.section`
+export const BannerSection1 = styled.div`
+    margin-top: 187px;
     background-image: url('img/home.png');
     width: 100%;
     height: 460px; 
-    margin-top: 40px;
     justify-content: space-between;
     position: relative;
     border-radius: 20px;

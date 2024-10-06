@@ -5,32 +5,34 @@ import './App.css';
 import Default from './components/Default/Default';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-
+import Phone from './components/LienLac/phone';
 function App() {
+  
   return (
     <Router>
       <div>
-        <Header/>
+        <Header />
         <div style={{ backgroundColor: 'rgb(246, 246, 246)' }}>
           <Routes>
             {route.map((route, index) => {
               const Page = route.page;
               const Layout = route.isShowHeader ? Default : React.Fragment;
               return (
-                <Route 
+                <Route
                   key={index}
-                  path={route.path} 
+                  path={route.path}
                   element={
                     <Layout>
                       <Page />
                     </Layout>
-                  } 
+                  }
                 />
               );
             })}
           </Routes>
         </div>
         <Footer />
+        <Phone />
       </div>
     </Router>
   );

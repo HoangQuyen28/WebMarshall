@@ -2,7 +2,7 @@ import React from 'react';
 import { ButtonHeader } from '../../pages/HomePage/style';
 import { ContentExtra, BestSellers, ProductList, ProductItemStyled, ProductImage, ProductContent, ProductCategory, ProductName, ProductDetails, ProductRating, ProductStock, ProductPrice, ProductColor, ProductImageContainer, ProductOverlay, ExtraInfo } from './style';
 import { CheckOutlined, CloseOutlined, StarFilled } from '@ant-design/icons';
-import ButtonCPN from '../Button/Button';
+import ButtonCPN from '../Reusable/Button/Button';
 import styled from 'styled-components';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

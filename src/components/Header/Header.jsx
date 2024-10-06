@@ -1,26 +1,52 @@
 import React, { useEffect, useState } from "react";
-import { WrapperHeaderTop, Container, AddressWrapper, LogoWrapper, ContactWrapper, AddressText, ContactText, HeaderBottom, SelectLeft, SelectRight, SelectLoa, MenuLink, StyledIcon, StyledImg, WrapperHeader, StyledIcon1 } from "./style";
-import { EnvironmentOutlined, HeartOutlined, PhoneOutlined, RiseOutlined, SearchOutlined, ShopOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
+import { WrapperHeaderTop, Container, AddressWrapper, ContactWrapper, AddressText, ContactText, HeaderBottom, SelectLeft, SelectRight, MenuLink, StyledIcon, StyledImg, WrapperHeader, StyledIcon1 } from "./style";
+import { DownOutlined, EnvironmentOutlined, HeartOutlined, PhoneOutlined, RiseOutlined, SearchOutlined, ShopOutlined, ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
 import styled from "styled-components";
 import { Number1 } from '../News/News'
-
-const TopIcon = styled.span`
-    color:red;
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 7px;
-    background: white;
-    border-radius: 50%;
-    padding: 5px;
-    width: 10px;
-`
+import {useNavigate } from "react-router-dom";
+import Dropdown from "../Reusable/Dropdown/Dropdown";
 
 export const Logo = styled.img`
     width: 280px;
     height: 100px;
+    cursor: pointer;
 `
 
+export const DropDownContainer = styled.div`
+    position: relative;
+    cursor: pointer;
+    width: auto;
+`
+export const DropDownHeader = styled.div`
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:15px;
+`
+
+export const DropdownListContainer = styled.div`
+    position: absolute;
+    background-color: #090909;
+    border-radius: 10px;
+    padding: 10px; 
+    width: auto;
+    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+`;
+
+export const DropdownListItem = styled.div`
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    &:hover {
+        color: silver;
+    }
+`;
+export const WrapperDownOutlined = styled(DownOutlined)`
+    font-size:10px;
+    margin-left:8px;
+`
 function Header() {
     //bien mat
     const [isHeaderTopVisible, setIsHeaderTopVisible] = useState(true);
@@ -52,6 +78,22 @@ function Header() {
         }
     }, [])
 
+    const [isOpen, setIsOpen] = useState(null);
+
+    const LOAMARSHALL = [
+        {
+            name: 'LOA MARSHALL',
+            list: ['Loa di động', 'Loa nghe trong nhà']
+        }
+    ]
+    const TAINGHEMARSHALL = [
+        {
+            name: 'TAI NGHE MARSHALL',
+            list: ['IN-EAR', 'ON-EAR', 'OVER-EAR', 'TRUE WIRELESS']
+        }
+    ]
+
+    const navigate = useNavigate();
     return (
         <WrapperHeader className={sticky ? 'sticky' : ''}>
             <WrapperHeaderTop isVisible={isHeaderTopVisible}>
@@ -63,8 +105,9 @@ function Header() {
                             <span>HCM: 62 Hoa Cau, Phường 7, Phú Nhuận, TP.HCM</span>
                         </AddressText>
                     </AddressWrapper>
-                    <Logo src='img/Marshall-Logo-1.png' />
-
+                    <div onClick={() => navigate('/')}>
+                        <Logo src='img/Marshall-Logo-1.png' />
+                    </div>
                     <ContactWrapper>
                         <PhoneOutlined style={{ fontSize: '30px' }} />
                         <ContactText >
@@ -79,17 +122,21 @@ function Header() {
             <HeaderBottom className={sticky ? 'sticky' : ''}>
                 <SelectLeft>
                     <ShopOutlined />
-                    <SelectLoa defaultValue="default">
-                        <option value="default" disabled>LOA MARSHALL</option>
-                        <option value="portable">Loa di động</option>
-                        <option value="home">Loa nghe trong nhà</option>
-                    </SelectLoa>
+                    <Dropdown
+                    menuItems={LOAMARSHALL}
+                    navigateTo={'/loaMarshall'}
+                    onMouseEnterValue={'LOA'}
+                    onMouseLeaveValue={null}
+                    />
                     <MenuLink>PHỤ KIỆN MARSHALL</MenuLink>
-                    <SelectLoa defaultValue="default">
-                        <option value="default" disabled>TAI NGHE MARSHALL</option>
-                        <option value="portable">Loa di động</option>
-                        <option value="home">Loa nghe trong nhà</option>
-                    </SelectLoa>
+                    <Dropdown
+                    menuItems={TAINGHEMARSHALL}
+                    navigateTo={'/taiNgheMarshall'}
+                    onMouseEnterValue={'TAI'}
+                    onMouseLeaveValue={null}
+                    />
+
+
                     <MenuLink>BLOG</MenuLink>
                     <MenuLink>LIÊN HỆ</MenuLink>
                 </SelectLeft>

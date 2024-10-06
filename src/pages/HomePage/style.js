@@ -38,7 +38,7 @@ export const BannerContent = styled.div`
     border-radius: 15px;
     font-size: 16px;
     width: 150px;
-    height: 30px;
+    height: 36px;
     cursor: pointer;
    
  `;

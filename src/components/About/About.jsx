@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Content, Img,Section } from './style';
-import ButtonCPN from '../Button/Button';
+import ButtonCPN from '../Reusable/Button/Button';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

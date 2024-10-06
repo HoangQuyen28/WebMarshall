@@ -76,7 +76,6 @@ export const HeaderBottom = styled.div`
     align-items: center;
     justify-content: space-between;
     user-select: none;
-    
     &.sticky {
     }
 `;
@@ -98,7 +97,7 @@ export const SelectLoa = styled.select`
   padding: 5px 10px;
   font-size: 14px;
   background:none;
-    border:none;
+  border:none;
   cursor: pointer;
     color:white;
   &:hover {

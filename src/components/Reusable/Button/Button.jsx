@@ -26,7 +26,6 @@ const StyledButton = styled.button`
   }
 `;
 
-// Button component with customizable background
 const ButtonCPN = ({ text, onClick, type = "button", style, icon, bgColor }) => {
   return (
     <StyledButton type={type} onClick={onClick} style={style} bgColor={bgColor}>

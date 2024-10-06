@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { ButtonHeader } from '../../pages/HomePage/style';
 import { ProductItemStyled, ExtraInfo, ProductCategory, ProductColor, ProductContent, ProductDetails, ProductImage, ProductImageContainer, ProductList, ProductName, ProductOverlay, ProductPrice, ProductRating, ProductStock, ContentExtra } from '../HotProduct/style';
 import { CheckOutlined, CloseOutlined, StarFilled } from '@ant-design/icons';
-import ButtonCPN from '../Button/Button';
+import ButtonCPN from '../Reusable/Button/Button';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faMagnifyingGlass, faCodeCompare } from "@fortawesome/free-solid-svg-icons";
 

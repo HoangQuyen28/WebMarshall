@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonCPN from '../Button/Button';
+import ButtonCPN from '../Reusable/Button/Button';
 import { CheckOutlined, CloseOutlined, RightOutlined, StarFilled } from '@ant-design/icons';
 import styled from 'styled-components';
 import { ExtraInfo, ProductCategory, ProductColor, ProductContent, ProductDetails, ProductImage, ProductImageContainer, ProductItemStyled, ProductList, ProductName, ProductOverlay, ProductPrice, ProductRating, ProductStock } from '../HotProduct/style';

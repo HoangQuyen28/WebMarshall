@@ -28,45 +28,6 @@ const HeaderRight = styled.div`
     display: flex;
 `;
 
-const HeaderBottom = styled.div`
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    gap: 20px;
-`;
-
-const ItemHeaderBottom = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 8px;
-    width: auto;
-    height: 200px;
-    text-align: center;
-    margin-left: 50px;
-`;
-
-const ProductImage = styled.img`
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 10px;
-`;
-
-const ProductName = styled.p`
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    margin: 5px 0;
-`;
-
-const ProductQuantity = styled.p`
-    font-size: 12px;
-    color: #666;
-`;
 
 const Content = styled.div`
     display: flex;
@@ -168,7 +129,7 @@ const ProductLis1 = styled.div`
     justify-content: space-between;
 `;
 
-const LoaMarshall = () => {
+const LoaDiDong = () => {
     const [sliderValue, setSliderValue] = useState(1000000);
     const [isOpenDienTich, setIsOpenDienTich] = useState(false);
     const [isOpenMauSac, setIsOpenMauSac] = useState(false); 
@@ -248,6 +209,8 @@ const LoaMarshall = () => {
         setIsOpenDienTich(false);
     };
 
+
+
     return (
         <Container>
             <Header>
@@ -261,15 +224,6 @@ const LoaMarshall = () => {
                         <p style={{ color: '#808080' }}>Hiển thị 1–12 của 16 kết quả</p>
                     </HeaderRight>
                 </div>
-                <HeaderBottom>
-                    {itemHeaderBottom.map((item, index) => (
-                        <ItemHeaderBottom key={index}>
-                            <ProductImage src={item.img} alt={item.name} />
-                            <ProductName>{item.name}</ProductName>
-                            <ProductQuantity>{item.quantity} sản phẩm</ProductQuantity>
-                        </ItemHeaderBottom>
-                    ))}
-                </HeaderBottom>
             </Header>
             <Content>
                 <LocSanPham>
@@ -343,7 +297,7 @@ const LoaMarshall = () => {
                 <ProductList>
                     <HeaderProductList>
                         <div >
-                            LOA MARSHALL
+                            LOA DI ĐỘNG
                         </div>
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center', justifyContent: 'center' }}>
                             <div>
@@ -376,4 +330,4 @@ const LoaMarshall = () => {
     );
 };
 
-export default LoaMarshall;
+export default LoaDiDong;

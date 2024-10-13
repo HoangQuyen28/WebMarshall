@@ -26,9 +26,9 @@ export const ProductList = styled.div`
 
 export const ProductImage = styled.img`
     width: 100%;
-    height: auto;
     border-radius: 8px;
     margin-bottom: 15px;
+    height: ${props => props.small ? '140px' : props.mediumSmall ? '160px' : props.medium ? '220px' : 'auto'};
 `;
 
 export const ProductImageContainer = styled.div`
@@ -67,12 +67,13 @@ export const ProductCategory = styled.span`
 `;
 
 export const ProductName = styled.h3`
-    font-size: 18px;
+    font-size: ${props => props.small ? '14px' : props.mediumSmall ? '15px' : props.medium ? '18px' : 'auto'};
     margin: 0 0 5px 0;
 `;
 
 export const ProductDetails = styled.div`
     margin-bottom: 10px;
+    font-size: ${props => props.small ? '10px' : props.mediumSmall ? '10.5px' : props.medium ? '12px' : 'auto'};
 `;
 
 export const ProductRating = styled.span`
@@ -99,13 +100,21 @@ export const ProductColor = styled.div`
 `;
 
 export const ExtraInfo = styled.div`
-    border-top: 1px solid #ccc;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
     max-height: 0;
     opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    margin-top: 15px;
-    white-space: nowrap; 
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+    padding: 10px;
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
 
+    /* Giúp phần mở rộng trượt lên khi hover */
+    transform: translateY(100%);
+    
     p {
         font-size: 13px;
     }
@@ -127,17 +136,19 @@ export const ProductItem = styled.div`
     &:hover {
         transform: translateY(-5px);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        
     }
 `;
 
 export const ProductItemStyled = styled(ProductItem)`
+    position:relative;  
     &:hover {   
         &>${ExtraInfo} {
                opacity: 1;
                max-height: 100px;
         }
     }
+    width: ${props => props.small ? '210px' : props.mediumSmall ? '230px' : props.medium ? '266px' : 'auto'};
+    height: ${props => props.small ? 'auto' : props.mediumSmall ? 'auto' : props.medium ? 'auto' : 'auto'};
 `;
 
 export const ContentExtra = styled.div`
@@ -146,4 +157,3 @@ export const ContentExtra = styled.div`
     margin-top: 10px;
     gap: 10px;
 `;
-

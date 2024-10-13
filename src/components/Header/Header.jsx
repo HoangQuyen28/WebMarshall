@@ -78,12 +78,10 @@ function Header() {
         }
     }, [])
 
-    const [isOpen, setIsOpen] = useState(null);
-
     const LOAMARSHALL = [
         {
             name: 'LOA MARSHALL',
-            list: ['Loa di động', 'Loa nghe trong nhà']
+            list: ['Loa di động', 'Loa nghe trong nhà','Limited edition']
         }
     ]
     const TAINGHEMARSHALL = [
@@ -92,7 +90,15 @@ function Header() {
             list: ['IN-EAR', 'ON-EAR', 'OVER-EAR', 'TRUE WIRELESS']
         }
     ]
+    const navigateToLoaMarshall = [
+        '/loaMarshall',       // Điều hướng đến trang LoaMarshall khi nhấn vào tên
+        '/loaDiDong',         // Điều hướng đến Loa di động
+        '/loaNgheTrongNha',   // Điều hướng đến Loa nghe trong nhà
+        '/limitedEdition',     // Điều hướng đến Limited edition
+    ];
 
+    const navigateToTaiNgheMarshall = ['/inEar', '/onEar', '/overEar', '/trueWireless']; 
+  
     const navigate = useNavigate();
     return (
         <WrapperHeader className={sticky ? 'sticky' : ''}>
@@ -122,21 +128,22 @@ function Header() {
             <HeaderBottom className={sticky ? 'sticky' : ''}>
                 <SelectLeft>
                     <ShopOutlined />
-                    <Dropdown
-                    menuItems={LOAMARSHALL}
-                    navigateTo={'/loaMarshall'}
-                    onMouseEnterValue={'LOA'}
-                    onMouseLeaveValue={null}
-                    />
+                    <div>
+                         <Dropdown
+                            menuItems={LOAMARSHALL}
+                            onMouseEnterValue={'LOA'}
+                            onMouseLeaveValue={null}
+                            navigateTo={navigateToLoaMarshall} 
+                        />
+                    </div>
+                   
                     <MenuLink>PHỤ KIỆN MARSHALL</MenuLink>
                     <Dropdown
                     menuItems={TAINGHEMARSHALL}
-                    navigateTo={'/taiNgheMarshall'}
+                    navigateTo={navigateToTaiNgheMarshall}
                     onMouseEnterValue={'TAI'}
                     onMouseLeaveValue={null}
                     />
-
-
                     <MenuLink>BLOG</MenuLink>
                     <MenuLink>LIÊN HỆ</MenuLink>
                 </SelectLeft>

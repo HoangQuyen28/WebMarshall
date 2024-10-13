@@ -1,5 +1,6 @@
 import HomePage from "../pages/HomePage/HomePage";
 import LoaMarshall from "../pages/LoaMarshall/LoaMarshall";
+import LoaDiDong from "../pages/LoaMarshall/LoaDiDong";
 const routes = [
   {
     path: '/',
@@ -8,6 +9,10 @@ const routes = [
   {
     path: '/loaMarshall',
     page: LoaMarshall,
+  },
+  {
+    path: '/loaDiDong',
+    page: LoaDiDong,
   }
 ];
 

@@ -55,7 +55,6 @@ const ProductItem = ({ product, index, small, medium, mediumSmall }) => {
             </ProductContent>
             <ButtonCPN style={{ width: small ? '100%' : medium ? '100%' : '100%', height: small ? '40px' : medium ? '40px' : mediumSmall ? '40px' : 'auto', fontSize: small ? '10px' : medium ? '12px' : mediumSmall ? '12px': 'auto' }} text='Lựa chọn các tuỳ chọn' />
             <ExtraInfo key={index}>
-
                 <div style={{ position: 'absolute', top: '0', right: '0', display: 'flex', flexDirection: 'column', margin: '20px', backgroundColor: 'white', boxShadow: '0 0 10px 0 rgba(0, 0, 0, 0.146)', padding: '10px 12px', borderRadius: '10px', cursor: 'pointer', gap: '10px', fontSize: '19px' }}>
                     <OverlayTrigger
                         placement="left"

@@ -91,13 +91,13 @@ function Header() {
         }
     ]
     const navigateToLoaMarshall = [
-        '/loaMarshall',       // Điều hướng đến trang LoaMarshall khi nhấn vào tên
-        '/loaDiDong',         // Điều hướng đến Loa di động
-        '/loaNgheTrongNha',   // Điều hướng đến Loa nghe trong nhà
-        '/limitedEdition',     // Điều hướng đến Limited edition
+        '/loaMarshall',       
+        '/loaDiDong',         
+        '/indoorSpeaker',   
+        '/limitedEdition',     
     ];
 
-    const navigateToTaiNgheMarshall = ['/inEar', '/onEar', '/overEar', '/trueWireless']; 
+    const navigateToTaiNgheMarshall = ['/earPage', '/inEar', '/onEar', '/overEar', '/trueWireless']; 
   
     const navigate = useNavigate();
     return (
@@ -137,7 +137,7 @@ function Header() {
                         />
                     </div>
                    
-                    <MenuLink>PHỤ KIỆN MARSHALL</MenuLink>
+                    <MenuLink onClick={() => navigate('/accessoryPage')}>PHỤ KIỆN MARSHALL</MenuLink>
                     <Dropdown
                     menuItems={TAINGHEMARSHALL}
                     navigateTo={navigateToTaiNgheMarshall}

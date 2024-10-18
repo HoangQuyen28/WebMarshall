@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { AppstoreOutlined, MenuOutlined } from '@ant-design/icons';
 import ProductItem from '../../components/ProductItem/ProductItem';
 import { Pagination } from 'antd';
-import ProductFilter from '../../components/Reusable/LocSanPham/LocSanPham';
+import LocSanPham2 from '../../components/Reusable/LocSanPham/LocSanPham2';
 
 const Container = styled.div`
     width: 100%;
@@ -101,26 +101,18 @@ const ProductLis1 = styled.div`
     justify-content: space-between;
 `;
 
-const LoaMarshall = () => {
-    const [sliderValue, setSliderValue] = useState(1000000);
-    const [isOpenDienTich, setIsOpenDienTich] = useState(false);
+const EarPage = () => {
     const [isOpenMauSac, setIsOpenMauSac] = useState(false);
-    const [isOpenCongSuat, setIsOpenCongSuat] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 8;
 
     const itemHeaderBottom = [
-        { img: '/img/indoorSpeaker.png', name: 'LOA DI ĐỘNG', quantity: '10' },
-        { img: '/img/indoorSpeaker.png', name: 'LOA NGHE TRONG NHÀ', quantity: '16' },
-        { img: '/img/indoorSpeaker.png', name: 'LIMITED EDITION', quantity: '1' },
+        { img: '/img/ear1.png', name: 'IN-EAR', quantity: '10' },
+        { img: '/img/ear1.png', name: 'ON-EAR', quantity: '16' },
+        { img: '/img/ear1.png', name: 'OVER-EAR', quantity: '1' },
+        { img: '/img/ear1.png', name: 'TRUE WIRELESS', quantity: '1' },
     ];
 
-    const dienTich = [
-        { name: '15 - 25m2' },
-        { name: '25 - 35m2' },
-        { name: '35 - 45m2' },
-        { name: '45 - 55m2' },
-    ];
 
     const mauSac = [
         { name: 'Đỏ' },
@@ -163,22 +155,8 @@ const LoaMarshall = () => {
 
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
-    const toggleDienTichDropdown = () => {
-        setIsOpenDienTich(!isOpenDienTich);
-        setIsOpenMauSac(false);
-        setIsOpenCongSuat(false);
-    };
-
     const toggleMauSacDropdown = () => {
         setIsOpenMauSac(!isOpenMauSac);
-        setIsOpenDienTich(false);
-        setIsOpenCongSuat(false);
-    };
-
-    const toggleCongSuatDropdown = () => {
-        setIsOpenCongSuat(!isOpenCongSuat);
-        setIsOpenMauSac(false);
-        setIsOpenDienTich(false);
     };
 
     return (
@@ -188,7 +166,7 @@ const LoaMarshall = () => {
                     <HeaderLeft>
                         <span style={{ color: '#808080' }}>Trang chủ</span>
                         <p>/</p>
-                        <p style={{ fontWeight: 'bold' }}>Loa Marshall</p>
+                        <p style={{ fontWeight: 'bold' }}>Tai nghe Marshall</p>
                     </HeaderLeft>
                     <HeaderRight>
                         <p style={{ color: '#808080' }}>Hiển thị 1–12 của 16 kết quả</p>
@@ -205,22 +183,15 @@ const LoaMarshall = () => {
                 </HeaderBottom>
             </Header>
             <Content>
-                <ProductFilter
-                    sliderValue={sliderValue}
-                    setSliderValue={setSliderValue}
-                    toggleDienTichDropdown={toggleDienTichDropdown}
-                    isOpenDienTich={isOpenDienTich}
-                    dienTich={dienTich}
+                <LocSanPham2 
                     toggleMauSacDropdown={toggleMauSacDropdown}
                     isOpenMauSac={isOpenMauSac}
                     mauSac={mauSac}
-                    toggleCongSuatDropdown={toggleCongSuatDropdown}
-                    isOpenCongSuat={isOpenCongSuat}
                 />
                 <ProductList>
                     <HeaderProductList>
                         <div >
-                            LOA MARSHALL
+                            TAI NGHE MARSHALL
                         </div>
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center', justifyContent: 'center' }}>
                             <div>
@@ -253,4 +224,4 @@ const LoaMarshall = () => {
     );
 };
 
-export default LoaMarshall;
+export default EarPage;

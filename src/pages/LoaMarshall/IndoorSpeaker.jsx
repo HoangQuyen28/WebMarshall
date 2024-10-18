@@ -4,7 +4,6 @@ import { AppstoreOutlined, MenuOutlined } from '@ant-design/icons';
 import ProductItem from '../../components/ProductItem/ProductItem';
 import { Pagination } from 'antd';
 import ProductFilter from '../../components/Reusable/LocSanPham/LocSanPham';
-
 const Container = styled.div`
     width: 100%;
     height: 400vh;
@@ -27,45 +26,6 @@ const HeaderRight = styled.div`
     display: flex;
 `;
 
-const HeaderBottom = styled.div`
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    gap: 20px;
-`;
-
-const ItemHeaderBottom = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-radius: 8px;
-    width: auto;
-    height: 200px;
-    text-align: center;
-    margin-left: 50px;
-`;
-
-const ProductImage = styled.img`
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 10px;
-`;
-
-const ProductName = styled.p`
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-    margin: 5px 0;
-`;
-
-const ProductQuantity = styled.p`
-    font-size: 12px;
-    color: #666;
-`;
 
 const Content = styled.div`
     display: flex;
@@ -73,11 +33,11 @@ const Content = styled.div`
     gap: 20px;  
 `;
 
-
 const ProductList = styled.div`
     width: 74%;
     
 `;
+
 
 const HeaderProductList = styled.div`
     display: flex;
@@ -101,19 +61,13 @@ const ProductLis1 = styled.div`
     justify-content: space-between;
 `;
 
-const LoaMarshall = () => {
+const IndoorSpeaker = () => {
     const [sliderValue, setSliderValue] = useState(1000000);
     const [isOpenDienTich, setIsOpenDienTich] = useState(false);
-    const [isOpenMauSac, setIsOpenMauSac] = useState(false);
-    const [isOpenCongSuat, setIsOpenCongSuat] = useState(false);
+    const [isOpenMauSac, setIsOpenMauSac] = useState(false); 
+    const [isOpenCongSuat, setIsOpenCongSuat] = useState(false); 
     const [currentPage, setCurrentPage] = useState(1);
-    const productsPerPage = 8;
-
-    const itemHeaderBottom = [
-        { img: '/img/indoorSpeaker.png', name: 'LOA DI ĐỘNG', quantity: '10' },
-        { img: '/img/indoorSpeaker.png', name: 'LOA NGHE TRONG NHÀ', quantity: '16' },
-        { img: '/img/indoorSpeaker.png', name: 'LIMITED EDITION', quantity: '1' },
-    ];
+    const productsPerPage = 8; 
 
     const dienTich = [
         { name: '15 - 25m2' },
@@ -128,13 +82,13 @@ const LoaMarshall = () => {
         { name: 'Đen' },
         { name: 'Trắng' },
     ];
-
+    
     const MoiNhat = [
-        { name: 'Mới nhất' },
-        { name: 'Thu tu theo muc pho bien' },
-        { name: 'Thu tu theo gia tang dan' },
-        { name: 'Thu tu theo gia giam dan' },
-        { name: 'Thu tu theo moi nhat' },
+        {name:'Mới nhất'    },
+        {name:'Thu tu theo muc pho bien'    },
+        {name:'Thu tu theo gia tang dan'   },
+        {name:'Thu tu theo gia giam dan'   },
+        {name:'Thu tu theo moi nhat'   },
     ]
     const loaMarshall1 = [
         { image: '/img/p2.png', name: 'MARSHALL MINOR IV', category: 'TAI NGHE MARSHALL', type: 'ON-EAR', rating: 4, inStock: true, price: '2.790.000 ₫', colors: ['Black', 'White'], sale: '20%', hot: 'HOT', new: 'NEW', Sound: 'Stereo', Brand: 'Marshall' },
@@ -154,7 +108,7 @@ const LoaMarshall = () => {
         { image: '/img/p2.png', name: 'MARSHALL MINOR IV', category: 'TAI NGHE MARSHALL', type: 'ON-EAR', rating: 5, inStock: true, price: '2.790.000 ₫', colors: ['red'], sale: '15%', hot: 'HOT', new: 'NEW', Sound: 'Stereo', Brand: 'Marshall' },
         { image: '/img/p3.png', name: 'MARSHALL MINOR IV', category: 'TAI NGHE MARSHALL', type: 'ON-EAR', rating: 4, inStock: false, price: '2.790.000 ₫', colors: ['Brown', 'Gold'], hot: 'HOT', new: 'NEW', Sound: 'Stereo', Brand: 'Marshall' },
         { image: '/img/p4.png', name: 'MARSHALL MINOR IV', category: 'TAI NGHE MARSHALL', type: 'ON-EAR', rating: 3, inStock: true, price: '2.790.000 ₫', colors: ['Gold'], sale: '10%', hot: 'HOT', new: 'NEW', Sound: 'Stereo', Brand: 'Marshall' },
-
+        
     ];
 
     const indexOfLastProduct = currentPage * productsPerPage;
@@ -171,15 +125,17 @@ const LoaMarshall = () => {
 
     const toggleMauSacDropdown = () => {
         setIsOpenMauSac(!isOpenMauSac);
-        setIsOpenDienTich(false);
+        setIsOpenDienTich(false); 
         setIsOpenCongSuat(false);
     };
 
     const toggleCongSuatDropdown = () => {
         setIsOpenCongSuat(!isOpenCongSuat);
-        setIsOpenMauSac(false);
+        setIsOpenMauSac(false); 
         setIsOpenDienTich(false);
     };
+
+
 
     return (
         <Container>
@@ -189,23 +145,16 @@ const LoaMarshall = () => {
                         <span style={{ color: '#808080' }}>Trang chủ</span>
                         <p>/</p>
                         <p style={{ fontWeight: 'bold' }}>Loa Marshall</p>
+                        <p>/</p>
+                        <p style={{ fontWeight: 'bold' }}>Loa Nghe Trong Nhà</p>
                     </HeaderLeft>
                     <HeaderRight>
                         <p style={{ color: '#808080' }}>Hiển thị 1–12 của 16 kết quả</p>
                     </HeaderRight>
                 </div>
-                <HeaderBottom>
-                    {itemHeaderBottom.map((item, index) => (
-                        <ItemHeaderBottom key={index}>
-                            <ProductImage src={item.img} alt={item.name} />
-                            <ProductName>{item.name}</ProductName>
-                            <ProductQuantity>{item.quantity} sản phẩm</ProductQuantity>
-                        </ItemHeaderBottom>
-                    ))}
-                </HeaderBottom>
             </Header>
             <Content>
-                <ProductFilter
+            <ProductFilter
                     sliderValue={sliderValue}
                     setSliderValue={setSliderValue}
                     toggleDienTichDropdown={toggleDienTichDropdown}
@@ -220,7 +169,7 @@ const LoaMarshall = () => {
                 <ProductList>
                     <HeaderProductList>
                         <div >
-                            LOA MARSHALL
+                            LOA NGHE TRONG NHÀ
                         </div>
                         <div style={{ display: 'flex', gap: '10px', alignItems: 'center', justifyContent: 'center' }}>
                             <div>
@@ -245,7 +194,7 @@ const LoaMarshall = () => {
                         total={loaMarshall1.length}
                         pageSize={productsPerPage}
                         onChange={paginate}
-                        style={{ textAlign: 'center', marginTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                        style={{ textAlign: 'center', marginTop: '20px',display:'flex',justifyContent:'center',alignItems:'center' }}
                     />
                 </ProductList>
             </Content>
@@ -253,4 +202,4 @@ const LoaMarshall = () => {
     );
 };
 
-export default LoaMarshall;
+export default IndoorSpeaker;
